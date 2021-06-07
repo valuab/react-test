@@ -52,8 +52,6 @@ class he extends Component {
     },()=>{
       console.log(this.ul.querySelectorAll('li').length)
     })
-
-    
   }
 
   deleteItem(e){
