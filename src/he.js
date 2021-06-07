@@ -15,8 +15,10 @@ class he extends Component {
         {/* 小 demo */}
         <div>
           <div>
-            <input value={this.state.inputValue} onChange={this.inputChange.bind(this)} /> <button onClick={this.addList.bind(this)}>增加</button> 
-            <ul>
+            <input value={this.state.inputValue} onChange={this.inputChange.bind(this)} 
+              ref= {(input)=>{this.input = input}}
+            /> <button onClick={this.addList.bind(this)}>增加</button> 
+            <ul ref={(ul)=>{this.ul = ul}}>
               {
                 this.state.list.map((item,index) => {
                   return (
@@ -37,9 +39,9 @@ class he extends Component {
     )
   }
 
-  inputChange(e){
+  inputChange(){
     this.setState({
-      inputValue: e.target.value
+      inputValue: this.input.value
     })
   }
 
@@ -47,7 +49,11 @@ class he extends Component {
     let {list,inputValue} = this.state
     this.setState({
       list: [...list,inputValue]
+    },()=>{
+      console.log(this.ul.querySelectorAll('li').length)
     })
+
+    
   }
 
   deleteItem(e){
