@@ -1,6 +1,7 @@
 import React, {
   Component
 } from 'react';
+import PropTypes from 'props-types';
 
 class heItem extends Component {
   state = {}
@@ -20,6 +21,13 @@ class heItem extends Component {
     // 父子组件方法传递
     this.props.deleteItem(this.props.index)
   }
+}
+
+// 传值校验
+heItem.propTypes = {
+  content: PropTypes.string,
+  index:PropTypes.number,
+  deleteClick: PropTypes.func,
 }
 
 export default heItem;
