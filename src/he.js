@@ -1,5 +1,6 @@
 import React,{Component,Fragment} from 'react'
 import HeItem from './heItem'
+import Hooks from './hooks/hooks'
 class he extends Component {
   constructor(props){
     super(props)
@@ -32,6 +33,7 @@ class he extends Component {
                 })
               }
             </ul>
+            <Hooks/>
           </div>
         </div>
       </Fragment>
