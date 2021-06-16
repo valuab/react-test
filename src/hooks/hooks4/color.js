@@ -9,7 +9,7 @@ const reducer = (state,action) => {
     case UPDATE_COLOR:
       return action.color
     default:
-      return action.color
+      return state
   }
 }
 
