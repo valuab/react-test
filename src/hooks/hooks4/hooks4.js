@@ -1,11 +1,17 @@
 import React from 'react';
-import Buttons from './buttons';
+import Buttons from './Buttons';
 import ShowArea from './ShowArea';
- function Hooks4(){
+import {Color} from './color'
+ 
+function Hooks4(){
    return(
      <div>
-       <ShowArea />
-       <Buttons />
+        <Color>
+          <ShowArea />
+          <Buttons />
+        </Color>
      </div>
    )
- }
+}
+
+ export default Hooks4

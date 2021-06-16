@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
+import {ColorContext} from './color'
 
 function ShowArea(){
+  const {color} = useContext(ColorContext)
   return(
-    <div style={{color:'blue'}}>颜色未blue</div>
+    <div style={{color:color}}>颜色为{color}</div>
   )
 }
 
