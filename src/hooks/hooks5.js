@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState ,useMemo } from 'react';
 
-function hooks5(){
+function Hooks5(){
   const [data1,setData1] = useState('小红今天吃鱼')
   const [data2,setData2] = useState('小明今天撸猫')
 
@@ -21,7 +21,7 @@ function ChildComponent({name,child}){
     return name +　',' + new Date().getTime()
   }
 
-  const actionXiaohong = changeXiaohong(name)
+  const actionXiaohong = useMemo(()=>changeXiaohong(name),[name])
 
   return (
     <>
@@ -31,4 +31,4 @@ function ChildComponent({name,child}){
   )
 }
 
-export default hooks5
+export default Hooks5
